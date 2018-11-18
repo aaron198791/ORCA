@@ -54,7 +54,7 @@ button.setOpaque(true);
 button.setBorderPainted(false);
   BufferedImage image;
   try {                
-          image = ImageIO.read(new File("C:/Users/Aaron/Desktop/Aaron/ORCA/ORCA/Projects/ArrowArrowRevolutionMultiplayer/game/orca/ArrowArrowRevolutionMultiplayerProcessing/Down.jpg"));
+          image = ImageIO.read(new File("C:/Users/SP513/ORCA/Projects/ArrowArrowRevolutionMultiplayer/game/orca/ArrowArrowRevolutionMultiplayerProcessing/Down.jpg"));
        button.setIcon(new ImageIcon(image));
 	   } catch (IOException ex) {
 		   JFrame frame = new JFrame();
@@ -68,10 +68,6 @@ button.setBorderPainted(false);
  jframe.setVisible(false);	
     JFrame jframe = new JFrame("Welcome to ORCA Game");
 	jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	 
-
-   
-     
 
 
     // set the jframe size and location, and make it visible

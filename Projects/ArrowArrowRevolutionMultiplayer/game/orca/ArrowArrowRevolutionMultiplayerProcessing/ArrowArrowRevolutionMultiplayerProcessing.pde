@@ -22,6 +22,10 @@ int score = 0;
 int deathVal = 10;
 
 void draw() {
+  playerOne(); 
+}
+
+void playerOne() {
   fill(0, 0, 255);
   textMode(CENTER);
   text(score, width/3, 700);
@@ -110,7 +114,7 @@ void draw() {
       resetBoard();
     }
     }
-  } 
+  }
 }
 
 void keyPressed() {
