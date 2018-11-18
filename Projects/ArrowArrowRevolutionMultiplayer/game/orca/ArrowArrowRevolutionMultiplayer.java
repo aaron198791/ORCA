@@ -1,4 +1,4 @@
-xpackage game.orca;
+package game.orca;
 
 import java.util.*;
 import java.lang.*;
