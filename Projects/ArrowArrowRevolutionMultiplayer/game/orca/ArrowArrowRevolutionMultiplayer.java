@@ -18,8 +18,8 @@ public class ArrowArrowRevolutionMultiplayer {
 
     // set the jframe size and location, and make it visible
    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    jframe.setSize(screenSize	.width, screenSize.height);
-    jframe.pack();
+    jframe.setSize(screenSize.width, screenSize.height);
+   // jframe.pack();
     jframe.setLocationRelativeTo(null);
     jframe.setVisible(true);
 	jframe.setVisible(true);
