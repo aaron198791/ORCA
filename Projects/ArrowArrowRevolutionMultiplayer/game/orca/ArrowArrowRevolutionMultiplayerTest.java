@@ -1,5 +1,5 @@
 package game.orca;
-public class test{
+public class ArrowArrowRevolutionMultiplayerTest{
 public static void main(String[] args)
 {
 ArrowArrowRevolutionMultiplayer run = new ArrowArrowRevolutionMultiplayer();
