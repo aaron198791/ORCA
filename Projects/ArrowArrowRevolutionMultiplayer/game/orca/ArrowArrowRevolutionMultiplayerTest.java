@@ -13,10 +13,9 @@ JFileChooser chooser = new JFileChooser();
     chooser.setFileFilter(filter);
     int returnVal = chooser.showOpenDialog(frame);
     if(returnVal == JFileChooser.APPROVE_OPTION) {
-       System.out.println("You chose to open this file: " +
-            chooser.getSelectedFile().getName());
+       System.out.println("You chose to open this file: " +chooser.getSelectedFile().getName());
     }
-/*ArrowArrowRevolutionMultiplayer run = new ArrowArrowRevolutionMultiplayer();
-run.game();*/
+ArrowArrowRevolutionMultiplayer run = new ArrowArrowRevolutionMultiplayer();
+run.game();
 }
 }
