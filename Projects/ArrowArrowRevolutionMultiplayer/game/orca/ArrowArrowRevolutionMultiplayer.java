@@ -53,9 +53,12 @@ public class ArrowArrowRevolutionMultiplayer {
 button.setOpaque(true);
 button.setBorderPainted(false);
   BufferedImage image;
-  try {                
-          image = ImageIO.read(new File("C:/Users/Aaron/Desktop/Aaron/ORCA/ORCA/Projects/ArrowArrowRevolutionMultiplayer/game/orca/ArrowArrowRevolutionMultiplayerProcessing/Down.jpg"));
-       button.setIcon(new ImageIcon(image));
+  try {           
+String path = "ArrowArrowRevolutionMultiplayerProcessing/Down.jpg";
+
+          //image = ImageIO.read(new File("C:/Users/Aaron/Desktop/Aaron/ORCA/ORCA/Projects/ArrowArrowRevolutionMultiplayer/game/orca/ArrowArrowRevolutionMultiplayerProcessing/Down.jpg"));
+      Image bgg[0]=new ImageIcon(getClass().getResource(path).getImage(image));
+	   button.setIcon(bgg[0]);
 	   } catch (IOException ex) {
 		   JFrame frame = new JFrame();
             JOptionPane.showMessageDialog(frame,"Cannot Find file");
