@@ -1,33 +1,98 @@
-int strikeVal; 
-int blu;
-PImage Up;
-PImage Right;
-PImage Left;
-PImage Down;
-PImage yui;
+char strikeValOne;
+char strikeValTwo;
+int dirIndexOne;
+int dirIndexTwo;
+
+int scoreOne = 0;
+int scoreTwo = 0;
+int livesOne = 20;
+int livesTwo = 20;
+
+int clearTimeOne;
+int clearTimeTwo;
+int strikeTimeOne;
+int strikeTimeTwo;
 
 void setup() {
-  size(2000, 1000);
+  size(2020, 1000);
+  background(0);
   textSize(75);
-  delay(1500);
-  resetBoard();
-  Up = loadImage("Up.jpg");
-  Right = loadImage("Right.jpg");
-  Left = loadImage("Left.jpg");
-  Down = loadImage("Down.jpg");
-  yui = loadImage("yui.jpg");
+  resetBoardOne();
+  resetBoardTwo();
 }
 
-int score = 0;
-int deathVal = 10;
+void keyPressed() {
+  if (key == CODED) {
+    if (keyCode == UP) {
+      strikeValTwo = 2;
+    }
+    else if (keyCode == RIGHT) {
+      strikeValTwo = 3;
+    } 
+    else if (keyCode == LEFT) {
+      strikeValTwo = 4;
+    } 
+    else if (keyCode == DOWN) {
+      strikeValTwo = 5;
+    } 
+  }
+}
 
-void draw() {
+void resetBoardOne() {  
+  strikeValOne = 0;
+  dirIndexOne = int(random(2, 6));
+  rectMode(CENTER);
+  fill(175);
+  rect(500, 500, 1000, 1000);
+  clearTimeOne = millis();
   fill(0, 0, 255);
   textMode(CENTER);
-  text(score, width/3, 700);
-  timeToHit();
-  
-    if (blu == 2) {
+  text(scoreOne, 425, 500);
+  timeToHitOne();
+}
+
+void resetBoardTwo() {
+  strikeValTwo = 0;
+  dirIndexTwo = int(random(2, 6));
+  rectMode(CENTER);
+  fill(175);
+  rect(1520, 500, 1000, 1000);
+  clearTimeTwo = millis();
+  fill(255, 0, 0);
+  textMode(CENTER);
+  text(scoreTwo, 1425, 500);
+  timeToHitTwo();
+}
+
+void timeToHitOne() {
+  if (scoreOne <= 10) {
+    strikeTimeOne = 1000;
+  } else if (scoreOne > 10 && scoreOne <= 30) {
+    strikeTimeOne = 750;
+  } else if (scoreOne > 30) {
+    strikeTimeOne = 500;
+  }
+}
+
+void timeToHitTwo() {
+  if (scoreTwo <= 10) {
+    strikeTimeTwo = 1000;
+  } else if (scoreTwo > 10 && scoreTwo <= 30) {
+    strikeTimeTwo = 750;
+  } else if (scoreTwo > 30) {
+    strikeTimeTwo = 500;
+  }
+}
+
+
+
+void draw(){
+}
+
+/*
+
+void draw() {
+  if (blu == 2) {
       fill(100);
       triangle(500, 150, 700, 150, 600, 50);
       imageMode(CENTER);
@@ -111,39 +176,4 @@ void draw() {
     }
     }
   } 
-}
-
-void keyPressed() {
-  if (key == CODED) {
-    if (keyCode == UP) {
-      strikeVal = 2;
-    } else if (keyCode == RIGHT) {
-      strikeVal = 3;
-    } else if (keyCode == LEFT) {
-      strikeVal = 4;
-    } else if (keyCode == DOWN) {
-      strikeVal = 5;
-    } 
-  }
-}
-
-int clearTime;
-
-void resetBoard() {  
-  strikeVal = 0;
-  blu = int(random(2, 6));
-  background(255);
-  clearTime = millis();
-}
-
-int strikeTime;
-
-void timeToHit() {
-  if (score <= 10) {
-    strikeTime = 1000;
-  } else if (score > 10 && score <= 30) {
-    strikeTime = 750;
-  } else if (score > 30) {
-    strikeTime = 500;
-  }
-}
+}*/
