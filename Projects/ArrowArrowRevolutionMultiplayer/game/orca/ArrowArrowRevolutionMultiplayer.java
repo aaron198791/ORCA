@@ -1,7 +1,4 @@
-
-
 package game.orca;
-
 import java.util.*;
 import java.lang.*;
 import java.io.*;
@@ -70,8 +67,9 @@ button.setBorderPainted(false);
 		   JFrame frame = new JFrame();
             JOptionPane.showMessageDialog(frame,"Cannot Find URL");
        }
-	     try{ 
+	    /* try{ 
 		 URL url = new URL("https://www.youtube.com/watch?v=1k8craCGpgs");
+		
          AudioInputStream audioIn = AudioSystem.getAudioInputStream(url);
          // Get a sound clip resource.
          Clip clip = AudioSystem.getClip();
@@ -84,7 +82,7 @@ button.setBorderPainted(false);
          e.printStackTrace();
       } catch (LineUnavailableException e) {
          e.printStackTrace();
-      }
+      }*/
 	button.setVisible(true);
 	panel.add(button);
 	
