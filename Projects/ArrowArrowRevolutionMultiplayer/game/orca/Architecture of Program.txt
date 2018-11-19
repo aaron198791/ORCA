@@ -1,1 +1,11 @@
+<<<<<<< HEAD
 f
+=======
+Classes: 
+JFrame-graphics, gui, 
+Statistics-counter,timer,input system
+input- user input system
+
+.pde
+
+>>>>>>> ad405bb80e699f912e7a68601f7d5b3430b96e4d
