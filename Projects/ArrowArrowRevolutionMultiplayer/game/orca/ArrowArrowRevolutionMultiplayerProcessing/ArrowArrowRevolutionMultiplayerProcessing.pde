@@ -63,9 +63,9 @@ void resetBoardOne() {
   fill(175);
   rect(500, 500, 1000, 1000);
   clearTimeOne = millis();
-  fill(0, 0, 255);
+  fill(0255, 0, 0);
   textMode(CENTER);
-  text(scoreTwo, 450, 100);
+  text(scoreOne, 450, 100);
   timeToHitOne();
 }
 
@@ -76,9 +76,9 @@ void resetBoardTwo() {
   fill(175);
   rect(1520, 500, 1000, 1000);
   clearTimeTwo = millis();
-  fill(255, 0, 0);
+  fill(0, 0, 255);
   textMode(CENTER);
-  text(scoreOne, 1570, 100);
+  text(scoreTwo, 1470, 100);
   timeToHitTwo();
 }
 
@@ -103,67 +103,67 @@ void timeToHitTwo() {
 }
 
 void draw() {
-  if (dirIndexTwo == 2) {
+  if (dirIndexOne == 2) {
     fill(255, 0, 0);
     triangle(425, 400, 575, 400, 500, 300);
 
-    if(strikeValTwo == dirIndexTwo) {
-      scoreTwo++;
-      resetBoardTwo();
+    if(strikeValOne == dirIndexOne) {
+      scoreOne++;
+      resetBoardOne();
     }
 
-    if(strikeValTwo != dirIndexTwo && strikeValTwo != 0 || millis() - clearTimeTwo > strikeTimeTwo) {
-      livesTwo--;
-      resetBoardTwo();
-      dirIndexTwo = 2;
+    if(strikeValOne != dirIndexOne && strikeValOne != 0 || millis() - clearTimeOne > strikeTimeOne) {
+      livesOne--;
+      resetBoardOne();
+      dirIndexOne = 2;
     }
   } 
   
-  else if(dirIndexTwo == 3) {
+  else if(dirIndexOne == 3) {
     fill(255, 0, 0);
     triangle(425, 600, 575, 600, 500, 700);
     
-    if(strikeValTwo == dirIndexTwo) {
-      scoreTwo++;
-      resetBoardTwo();
-    }
-    
-    if(strikeValTwo != dirIndexTwo && strikeValTwo != 0 || millis() - clearTimeTwo > strikeTimeTwo) {
-      livesTwo--;
-      resetBoardTwo();
-      dirIndexTwo = 3;
-    }
-  } 
-  
-  else if(dirIndexTwo == 4) {
-    fill(255, 0, 0);
-    triangle(400, 425, 400, 575, 300, 500);
-    
-    if(strikeValTwo == dirIndexTwo) {
-      scoreTwo++;
-      resetBoardTwo();
-    }
-    
-    if(strikeValTwo != dirIndexTwo && strikeValTwo != 0 || millis() - clearTimeTwo > strikeTimeTwo) {
-      livesTwo--;
-      resetBoardTwo();
-      dirIndexTwo = 4;
-    }
-  } 
-  
-  else if(dirIndexTwo == 5) {
-    fill(255, 0, 0);
-    triangle(600, 425, 600, 575, 700, 500);
-    
-    if(strikeValTwo == dirIndexTwo) {
-      scoreTwo++;
-      resetBoardTwo();
+    if(strikeValOne == dirIndexOne) {
+      scoreOne++;
+      resetBoardOne();
     }
     
     if(strikeValOne != dirIndexOne && strikeValOne != 0 || millis() - clearTimeOne > strikeTimeOne) {
       livesOne--;
       resetBoardOne();
-      dirIndexTwo = 5;
+      dirIndexOne = 3;
+    }
+  } 
+  
+  else if(dirIndexOne == 4) {
+    fill(255, 0, 0);
+    triangle(400, 425, 400, 575, 300, 500);
+    
+    if(strikeValOne == dirIndexOne) {
+      scoreOne++;
+      resetBoardOne();
+    }
+    
+    if(strikeValOne != dirIndexOne && strikeValOne != 0 || millis() - clearTimeOne > strikeTimeOne) {
+      livesOne--;
+      resetBoardOne();
+      dirIndexOne = 4;
+    }
+  } 
+  
+  else if(dirIndexOne == 5) {
+    fill(255, 0, 0);
+    triangle(600, 425, 600, 575, 700, 500);
+    
+    if(strikeValOne == dirIndexOne) {
+      scoreOne++;
+      resetBoardOne();
+    }
+    
+    if(strikeValOne != dirIndexOne && strikeValOne != 0 || millis() - clearTimeOne > strikeTimeOne) {
+      livesOne--;
+      resetBoardOne();
+      dirIndexOne = 5;
     }
   }
   
@@ -184,9 +184,9 @@ void draw() {
 
   /***************************************************************************************************************************************/
   
-    if (dirIndexTwo == 2) {
-    fill(255, 0, 0);
-    triangle(425, 400, 575, 400, 500, 300);
+  if (dirIndexTwo == 2) {
+    fill(0, 0, 255);
+    triangle(1445, 400, 1595, 400, 1520, 300);
 
     if(strikeValTwo == dirIndexTwo) {
       scoreTwo++;
@@ -201,8 +201,8 @@ void draw() {
   } 
   
   else if(dirIndexTwo == 3) {
-    fill(255, 0, 0);
-    triangle(425, 600, 575, 600, 500, 700);
+    fill(0, 0, 255);
+    triangle(1445, 600, 1595, 600, 1520, 700);
     
     if(strikeValTwo == dirIndexTwo) {
       scoreTwo++;
@@ -217,8 +217,8 @@ void draw() {
   } 
   
   else if(dirIndexTwo == 4) {
-    fill(255, 0, 0);
-    triangle(400, 425, 400, 575, 300, 500);
+    fill(0, 0, 255);
+    triangle(1420, 425, 1420, 575, 1320, 500);
     
     if(strikeValTwo == dirIndexTwo) {
       scoreTwo++;
@@ -233,8 +233,8 @@ void draw() {
   } 
   
   else if(dirIndexTwo == 5) {
-    fill(255, 0, 0);
-    triangle(600, 425, 600, 575, 700, 500);
+    fill(0, 0, 255);
+    triangle(1620, 425, 1620, 575, 1720, 500);
     
     if(strikeValTwo == dirIndexTwo) {
       scoreTwo++;
@@ -251,26 +251,34 @@ void draw() {
   if(livesTwo < 1) {
     fill(0);
     rectMode(CENTER);
-    rect(500, 500, 1000, 1000);
+    rect(1520, 500, 1000, 1000);
     dirIndexTwo = 0;
     textSize(100);
-    fill(255, 0, 0);
+    fill(0, 0, 255);
     textMode(CENTER);
-    text(scoreTwo, 450, 100);
+    text(scoreTwo, 1470, 100);
     fill(255);
     textMode(CENTER);
-    text("You Lose!", 325, 500);
+    text("You Lose!", 1345, 500);
     textSize(75);
   }
   
-}
-
-/*if(keyPressed) {
+  if(keyPressed) {
       if(key == 'r' || key == 'R') {
+        strikeValOne = 0;
         strikeValTwo = 0;
-        livesTwo = 10;
+        
+        livesOne = 20;
+        livesTwo = 20;
+        
+        scoreOne = 0;
         scoreTwo = 0;
+        
         delay(250);
+        
+        resetBoardOne();
         resetBoardTwo();
       }
-    } */
+    }
+  
+}
