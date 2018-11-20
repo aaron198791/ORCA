@@ -7,8 +7,8 @@ int dirIndexTwo;
 int scoreOne = 0;
 int scoreTwo = 0;
 
-int livesOne = 20;
-int livesTwo = 20;
+int livesOne = 10;
+int livesTwo = 10;
 
 int clearTimeOne;
 int clearTimeTwo;
@@ -40,6 +40,12 @@ void keyPressed() {
     }
   }
   
+  /*if(keyPressed) {
+    if(key == 'f' || key == 'F') {
+      livesTwo = 0;
+    }
+  }*/
+  
   if(key == CODED) {
     if(keyCode == UP) {
       strikeValTwo = 2;
@@ -63,9 +69,12 @@ void resetBoardOne() {
   fill(175);
   rect(500, 500, 1000, 1000);
   clearTimeOne = millis();
-  fill(0255, 0, 0);
+  fill(255, 0, 0);
   textMode(CENTER);
-  text(scoreOne, 450, 100);
+  text(scoreOne, 350, 100);
+  fill(255, 255, 0);
+  textMode(CENTER);
+  text(livesOne, 550, 100);
   timeToHitOne();
 }
 
@@ -78,7 +87,10 @@ void resetBoardTwo() {
   clearTimeTwo = millis();
   fill(0, 0, 255);
   textMode(CENTER);
-  text(scoreTwo, 1470, 100);
+  text(scoreTwo, 1370, 100);
+  fill(255, 255, 0);
+  textMode(CENTER);
+  text(livesTwo, 1570, 100);
   timeToHitTwo();
 }
 
@@ -268,8 +280,8 @@ void draw() {
         strikeValOne = 0;
         strikeValTwo = 0;
         
-        livesOne = 20;
-        livesTwo = 20;
+        livesOne = 10;
+        livesTwo = 10;
         
         scoreOne = 0;
         scoreTwo = 0;
