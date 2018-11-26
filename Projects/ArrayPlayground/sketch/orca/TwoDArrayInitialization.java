@@ -6,7 +6,7 @@ import java.io.*;
 
 public class TwoDArrayInitialization {
 	public static void main(String[] args) {
-		int[][] twoD = new int[3];
+		int[][] twoD = new int[3]; // this doesn't work :/
 		
 		twoD[0] = new int[3];
 		twoD[1] = new int[4];
