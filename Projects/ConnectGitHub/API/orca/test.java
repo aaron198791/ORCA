@@ -1,11 +1,22 @@
 package API.orca;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+import javax.swing.JOptionPane;
+import javax.swing.JFrame;
 public class test
 {
 public static void main(String[] args)
 	{	
-		String UserName="aaron";
-		String Email="test123@gmail.com";
-		UserNameCreate create =new UserNameCreate("aaron","test@gmail.com");
+		
+		 String UserName= JOptionPane.showInputDialog("Please enter a user name you want: ");
+
+        String Email	= JOptionPane.showInputDialog("Please enter an email for your account(emails can only be used once): ");
+
+
+        
+
+		UserNameCreate create =new UserNameCreate(UserName,Email);
 		create.netIsAvailable();
 		create.saveString(UserName,Email);
 	}
