@@ -76,9 +76,12 @@ public class UserNameCreate {
 	{
 		try{
 		try{
-			String usernameComputer1 = System.getProperty("user.home")+"/Desktop/";
-			System.out.print(usernameComputer1);
-			PrintWriter writer = new PrintWriter(usernameComputer1+"Aaron/ORCA/ORCA/Projects/ConnectGitHub/API/orca/UserInformation.txt", "UTF-8");
+			//String usernameComputer1 = System.getProperty("user.home")+"/Desktop/";
+			//String usernameComputer2 = System.getProperty("ORCA");
+			String usernameComputer3=System.getProperty("user.dir");
+			System.out.print(usernameComputer3);
+			//PrintWriter writer = new PrintWriter(usernameComputer1+"Aaron/ORCA/ORCA/Projects/ConnectGitHub/API/orca/UserInformation.txt", "UTF-8");
+			PrintWriter writer = new PrintWriter(usernameComputer3+"/UserInformation.txt", "UTF-8");
 			writer.println(UserName);
 			writer.println(Email);
 			writer.close();}
