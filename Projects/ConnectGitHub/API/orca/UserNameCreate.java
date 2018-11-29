@@ -71,7 +71,7 @@ public class UserNameCreate {
 		   return false;
 		}
 	}
-	public void saveString(String UserName,String Email)
+	public String saveString(String UserName,String Email)
 	{
 		try{
 		try{
@@ -83,14 +83,18 @@ public class UserNameCreate {
 			PrintWriter writer = new PrintWriter(usernameComputer3+"/UserInformation.txt", "UTF-8");
 			writer.println(UserName);
 			writer.println(Email);
-			writer.close();}
+			writer.close();
+			return usernameComputer3+"/UserInformation.txt";
+			}
 		catch (UnsupportedEncodingException e){
 			System.out.print("cannot find path.");
+			return "false";
 		}
 		}
 		catch (FileNotFoundException e)
 		{
 			System.err.print("Cannot find path.");
+			return "false";
 		}
 	}
 	

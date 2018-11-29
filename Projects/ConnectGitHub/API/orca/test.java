@@ -13,11 +13,13 @@ public static void main(String[] args)
 
         String Email	= JOptionPane.showInputDialog("Please enter an email for your account(emails can only be used once): ");
 
-
+			userName_Email_Check check =new userName_Email_Check();
+			
         
 
 		UserNameCreate create =new UserNameCreate(UserName,Email);
 		create.netIsAvailable();
-		create.saveString(UserName,Email);
+		String path =create.saveString(UserName,Email);
+		check.check(path);
 	}
 }
