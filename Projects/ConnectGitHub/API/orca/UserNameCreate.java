@@ -71,7 +71,6 @@ public class UserNameCreate {
 		   return false;
 		}
 	}
-	
 	public void saveString(String UserName,String Email)
 	{
 		try{
