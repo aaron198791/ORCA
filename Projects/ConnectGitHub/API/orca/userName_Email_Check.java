@@ -14,14 +14,14 @@ public class userName_Email_Check
 	{
 	 	try{
 		final Scanner scanner = new Scanner(new BufferedReader(new FileReader(path)));
-		String text1 = scanner.useDelimiter("\\s*$").next();
+		String text1 = scanner.useDelimiter("\\D").next();
 			String[] userName_password = text1.split("\\s");
 			String one =userName_password[0];
 			String userName1=userName_password[1];
 			String Email1 =userName_password[2];
 			
 			System.out.println(one);
-			System.out.println(password);
+			System.out.println(userName1);
 			System.out.println(Email1);
 			
 		}
