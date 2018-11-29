@@ -1,3 +1,4 @@
+Actions for User Class:
 -Have the program save username and password in txt file to local repository
 -pull array list of passwords and usernames from github, and then delete when finished
 -run through to see for duplicates, and then either push with or without adding username and password to array list
