@@ -1,4 +1,5 @@
-package sketch.orca;
+package API.orca;
+
 import javax.swing.ImageIcon;
 import java.lang.*;
 import javax.swing.JFrame;
@@ -38,51 +39,51 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Objects;
-public class UserNameCreate
-{
+
+public class UserNameCreate {
+	
 	public static void main(String[] args)
-	{
+	{	
+		UserNameCreate create =new UserNameCreate();
+		create.netIsAvailable();
+	}
+	
+	public UserNameCreate(){
+	}
+	
+	private boolean netIsAvailable() {
+		try {
+			final URL url = new URL("http://www.google.com");
+			final URLConnection conn = url.openConnection();
+			conn.connect();
+			conn.getInputStream().close();
+			return true;
+		} 
 		
-	
-	UserNameCreate create =new UserNameCreate();
-	create.netIsAvailable();
-	}
-	public UserNameCreate(){}
-	
-	private boolean netIsAvailable() 
-	{
-    try {
-        final URL url = new URL("http://www.google.com");
-        final URLConnection conn = url.openConnection();
-        conn.connect();
-        conn.getInputStream().close();
-		return true;
-    } catch (MalformedURLException e) {
-        System.out.print("Please make mure you are connected to the internet.");;
-		return false;
-    } catch (IOException e) {
-       System.out.print("No internet detected!");
-	   return false;
-    }
+		catch(MalformedURLException e) {
+			System.out.print("Please make mure you are connected to the internet.");;
+			return false;
+		} 
+		
+		catch (IOException e) {
+		   System.out.print("No internet detected!");
+		   return false;
+		}
 	}
 	
-	public void EmailCheck(String Email) throws IOException, InterruptedException {
+	/*public void EmailCheck(String Email) throws IOException, InterruptedException {
 	
-		if(netIsAvailable()==true)
-		{
-			
+		if(netIsAvailable()==true) {
 			Path directory = Paths.get("c:\\temp\\example");
-		Files.createDirectories(directory);
-		gitInit(directory);
-		Files.write(directory.resolve("example.txt"), new byte[0]);
-		gitStage(directory);
-		gitCommit(directory, "Add example.txt");
-	
+			Files.createDirectories(directory);
+			gitInit(directory);
+			Files.write(directory.resolve("example.txt"), new byte[0]);
+			gitStage(directory);
+			gitCommit(directory, "Add example.txt");
 		}
 	}	
 	
-	/*public void createName()
-	{
+	/*public void createName() {
 		String UserName =new String();
 		String Email =new String();
 		
@@ -92,8 +93,8 @@ public class UserNameCreate
 		JTextArea textArea = new JTextArea("Enter in User Name You Want");
 		User.setVisible(true);
 		
-		 Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    User.setSize(screenSize.width, screenSize.height);
-		
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		User.setSize(screenSize.width, screenSize.height);	
 	}*/
+	
 }
