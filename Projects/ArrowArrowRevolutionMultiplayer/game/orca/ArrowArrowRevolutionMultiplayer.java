@@ -1,4 +1,5 @@
 package game.orca;
+import sketch.orca;
 import java.util.*;
 import java.lang.*;
 import java.io.*;
@@ -51,7 +52,17 @@ public class ArrowArrowRevolutionMultiplayer {
 	JButton button = new JButton("Enter the Game");
 	 button.setFont(new Font("Courier New", Font.ITALIC, 20));
     button.setForeground(Color.white);
-
+JButton buttonab = new JButton("Create An Account");
+buttonab.setLocation(0,100);
+buttonab.setSize(200,200);
+buttonab.setBackground(Color.red);
+buttonab.addActionListener(new ActionListener() { 
+  public void actionPerformed(ActionEvent e) { 
+    UserNameCreate create =new UserNameCreate();
+	create.createName();
+  } 
+} );
+panel.add(buttonab);
 	button.setSize(600,500);
 	button.setLocation(300,20);
 	button.setBackground(Color.red);

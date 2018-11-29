@@ -52,7 +52,8 @@ public class UserNameCreate {
 	}
 	
 	private boolean netIsAvailable() {
-		try {
+		try
+		{
 			final URL url = new URL("http://www.google.com");
 			final URLConnection conn = url.openConnection();
 			conn.connect();
