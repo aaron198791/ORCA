@@ -72,7 +72,6 @@ public class UserNameCreate {
 	}
 	
 	/*public void EmailCheck(String Email) throws IOException, InterruptedException {
-	
 		if(netIsAvailable()==true) {
 			Path directory = Paths.get("c:\\temp\\example");
 			Files.createDirectories(directory);
