@@ -41,17 +41,17 @@ import java.nio.file.Paths;
 import java.util.Objects;
 
 public class UserNameCreate {
+	String UserName;
+	String Email;
 	
-	public static void main(String[] args)
-	{	
-		UserNameCreate create =new UserNameCreate();
-		create.netIsAvailable();
+	
+	public UserNameCreate(String UserName, String Email)
+	{
+		this.UserName=UserName;
+		this.Email=Email;
 	}
 	
-	public UserNameCreate(){
-	}
-	
-	private boolean netIsAvailable() {
+	public boolean netIsAvailable() {
 		try
 		{
 			final URL url = new URL("http://www.google.com");
@@ -72,29 +72,25 @@ public class UserNameCreate {
 		}
 	}
 	
-	/*public void EmailCheck(String Email) throws IOException, InterruptedException {
-		if(netIsAvailable()==true) {
-			Path directory = Paths.get("c:\\temp\\example");
-			Files.createDirectories(directory);
-			gitInit(directory);
-			Files.write(directory.resolve("example.txt"), new byte[0]);
-			gitStage(directory);
-			gitCommit(directory, "Add example.txt");
+	public void saveString(String UserName,String Email)
+	{
+		try{
+		try{
+			String usernameComputer1 = System.getProperty("user.home")+"/Desktop/";
+			System.out.print(usernameComputer1);
+			PrintWriter writer = new PrintWriter(usernameComputer1+"Aaron/ORCA/ORCA/Projects/ConnectGitHub/API/orca/UserInformation.txt", "UTF-8");
+			writer.println(UserName);
+			writer.println(Email);
+			writer.close();}
+		catch (UnsupportedEncodingException e){
+			System.out.print("cannot find path.");
 		}
-	}	
+		}
+		catch (FileNotFoundException e)
+		{
+			System.err.print("Cannot find path.");
+		}
+	}
 	
-	/*public void createName() {
-		String UserName =new String();
-		String Email =new String();
-		
-		JFrame User =new JFrame("Create an Account");
-		User.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		JPanel panel = new JPanel();
-		JTextArea textArea = new JTextArea("Enter in User Name You Want");
-		User.setVisible(true);
-		
-		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		User.setSize(screenSize.width, screenSize.height);	
-	}*/
 	
 }
