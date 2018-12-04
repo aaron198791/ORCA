@@ -7,6 +7,5 @@ int main()
 	printf("%x", &c);
 	clock_t startTime = clock();
 	
-	while(clock() < startTime + 5000)
-		;
+	while(clock() < startTime + 5000);
 }

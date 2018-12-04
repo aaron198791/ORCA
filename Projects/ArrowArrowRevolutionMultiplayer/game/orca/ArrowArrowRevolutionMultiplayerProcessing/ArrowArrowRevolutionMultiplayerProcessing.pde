@@ -19,6 +19,7 @@ int strikeTimeTwo;
 void setup() {
   size(2020, 1000);
   background(0);
+  delay(750);
   textSize(75);
   resetBoardOne();
   resetBoardTwo();
