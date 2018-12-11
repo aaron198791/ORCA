@@ -8,13 +8,14 @@ public class Letter{
 	public Character letter;
 /**
 * Constructs the Letter object
+* @param a input for cipher setup
 */	
 	public Letter(Character a){
 		this.letter = a;
 	}
 	/**
 	* Builds the input segment for every cipher
-	* To be used in creation of every cipher as Key
+	* @return Letter[] which is used in the creation of every cipher as Key
 	*/
 	public static Letter[] alphabet(){//Long and boring
 		Letter[] a = new Letter[26];

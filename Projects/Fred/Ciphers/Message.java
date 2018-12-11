@@ -23,6 +23,7 @@ public class Message{
 	}
 	/**
 	* Constructs Message object from existing String
+	* @param word the input
 	*/
 	public Message(String word){
 		this.word = word;
@@ -31,6 +32,7 @@ public class Message{
 	}
 	/**
 	* Constructs Message object from existing char array
+	* @param letters the input
 	*/
 	public Message(char[] letters){
 		this.letters = letters;

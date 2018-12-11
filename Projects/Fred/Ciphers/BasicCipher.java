@@ -8,15 +8,16 @@ public class BasicCipher{
 	/**
 	* Builds the Map that will be used to execute the cipher
 	* @deprecated
+	* @return Map&lt;Character, Character&gt; for use in ciphers
 	*/
 	public Map<Character, Character> buildBasicCipher(){//Utility
 		Map<Character, Character> cipher = new HashMap<>();
 		return cipher;
 	}
 	/**
-	* Constructs a simple cipher, calling #easyCipherBuilderOne()
+	* Constructs a simple cipher, calling ORCA.Projects.Fred.Ciphers.BasicCipher#easyCipherBuilderOne()
 	* Can be one of any number of ciphers employed in complicated enciphering systems
-	* @param Map<Character, Character> to hold employ the cipher
+	* @param cipher to hold the cipher
 	*/
 	public static void easyCipherOne(Map<Character, Character> cipher){//Cipher builder
 		Letter[] a = alphabet();
@@ -26,9 +27,9 @@ public class BasicCipher{
 		}
 	}
 	/**
-	* Constructs a simple cipher, calling #easyCipherBuilderTwo()
+	* Constructs a simple cipher, calling ORCA.Projects.Fred.Ciphers.BasicCipher#easyCipherBuilderTwo()
 	* Can be one of any number of ciphers employed in complicated enciphering systems
-	* @param Map<Character, Character> to hold employ the cipher
+	* @param cipher to hold the cipher
 	*/
 	public static void easyCipherTwo(Map<Character, Character> cipher){//Cipher builder
 		Letter[] a = alphabet();
@@ -38,9 +39,9 @@ public class BasicCipher{
 		}
 	}
 	/**
-	* Constructs a simple cipher, calling #easyCipherBuilderThree()
+	* Constructs a simple cipher, calling ORCA.Projects.Fred.Ciphers.BasicCipher#easyCipherBuilderThree()
 	* Can be one of any number of ciphers employed in complicated enciphering systems
-	* @param Map<Character, Character> to hold employ the cipher
+	* @param cipher to hold and employ the cipher
 	*/
 	public static void easyCipherThree(Map<Character, Character> cipher){//Cipher builder
 		Letter[] a = alphabet();
@@ -50,9 +51,9 @@ public class BasicCipher{
 		}
 	}
 	/**
-	* Constructs a simple cipher, calling #easyCipherOne(Map<Character, Character>)
+	* Constructs a simple cipher, calling ORCA.Projects.Fred.Ciphers.BasicCipher#easyCipherOne(Map&lt;Character, Character&gt;)
 	* Can be one of any number of ciphers employed in complicated enciphering systems
-	* @param Map<Character, Character> to hold employ the cipher
+	* @param one holds input
 	*/
 	public static void basicEncipherOne(Message one){
 		Map<Character, Character> cipher = new HashMap<>();
@@ -70,9 +71,9 @@ public class BasicCipher{
 		one.pieces = one.word.split(" ");
 	}
 	/**
-	* Constructs a simple cipher, calling #easyCipherTwo(Map<Character, Character>)
+	* Constructs a simple cipher, calling ORCA.Projects.Fred.Ciphers.BasicCipher#easyCipherTwo(Map&lt;Character, Character&gt;)
 	* Can be one of any number of ciphers employed in complicated enciphering systems
-	* @param Map<Character, Character> to hold employ the cipher
+	* @param one holds input
 	*/
 	public static void basicEncipherTwo(Message one){
 		Map<Character, Character> cipher = new HashMap<>();
@@ -90,9 +91,9 @@ public class BasicCipher{
 		one.pieces = one.word.split(" ");
 	}
 	/**
-	* Constructs a simple cipher, calling #easyCipherThree(Map<Character, Character>)
+	* Constructs a simple cipher, calling ORCA.Projects.Fred.Ciphers.BasicCipher#easyCipherThree(Map&lt;Character, Character&gt;)
 	* Can be one of any number of ciphers employed in complicated enciphering systems
-	* @param Message, which is the input
+	* @param one, which is the input
 	*/
 	public static void basicEncipherThree(Message one){
 		Map<Character, Character> cipher = new HashMap<>();
@@ -135,6 +136,7 @@ public class BasicCipher{
 	}
 	/**
 	* Builds a simple cipher for implementation as values in a Map
+	* @return Letter[] for use in building ciphers
 	*/
 	public static Letter[] easyCipherBuilderOne(){//Long and not worth viewing
 		Letter[] a = new Letter[26];
@@ -168,6 +170,7 @@ public class BasicCipher{
 	}
 	/**
 	* Builds a simple cipher for implementation as values in a Map
+	* @return Letter[] for use in building ciphers
 	*/
 	public static Letter[] easyCipherBuilderTwo(){//Long and not worth viewing
 		Letter[] a = new Letter[26];
@@ -201,6 +204,7 @@ public class BasicCipher{
 	}
 	/**
 	* Builds a simple cipher for implementation as values in a Map
+	* @return Letter[] for use in building ciphers
 	*/
 	public static Letter[] easyCipherBuilderThree(){//Long and not worth viewing
 		Letter[] a = new Letter[26];

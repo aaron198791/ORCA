@@ -7,6 +7,7 @@ import java.util.*;
 public class ComplexCipher{
 	/**
 	* creates a 3-part cipher, using one of three ciphers for each individual word
+	* @param one is the input
 	*/
 	public static void triPartCipher(Message one){
 		one.word = "";
