@@ -13,7 +13,12 @@ public class UUID_names {
 	
 	public UUID create_ID() {
 		UUID uuid =UUID.randomUUID();
-		return uuid;	
+		return uuid;
+String usernameComputer3=System.getProperty("user.dir");
+PrintWriter writer = new PrintWriter(usernameComputer3+"/Do_Not_open.txt", "UTF-8");
+			writer.println(UserName);
+			writer.println(Email);
+			writer.close();		
 	}
 	
 	public static void main(String[] args) {
