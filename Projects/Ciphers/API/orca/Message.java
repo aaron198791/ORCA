@@ -1,6 +1,9 @@
-package ORCA.Projects.Fred.Ciphers;
-import ORCA.Projects.Fred.Ciphers.*;
-import java.util.Scanner;
+package API.orca;
+
+import API.orca.*;
+import static API.orca.*;
+import static API.orca.*;
+import java.util.*;
 
 /**
 * Takes input to be enciphered

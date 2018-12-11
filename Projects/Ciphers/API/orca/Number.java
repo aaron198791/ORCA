@@ -1,5 +1,9 @@
-package orca.fred.projects;
-import java.util.Scanner;
+package API.orca;
+
+import API.orca.*;
+import static API.orca.*;
+import static API.orca.*;
+import java.util.*;
 
 public class Number{
 	public static String translate(int x){

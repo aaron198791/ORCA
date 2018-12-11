@@ -1,7 +1,8 @@
-package ORCA.Projects.Fred.Ciphers;
-import ORCA.Projects.Fred.Ciphers.*;
-import static ORCA.Projects.Fred.Ciphers.Letter.*;
-import static ORCA.Projects.Fred.Ciphers.BasicCipher.*;
+package API.orca;
+
+import API.orca.*;
+import static API.orca.*;
+import static API.orca.*;
 import java.util.*;
 
 public class ComplexCipher{

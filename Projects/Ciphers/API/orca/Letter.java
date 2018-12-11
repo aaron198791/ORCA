@@ -1,5 +1,10 @@
-package ORCA.Projects.Fred.Ciphers;
-import ORCA.Projects.Fred.Ciphers.*;
+package API.orca;
+
+import API.orca.*;
+import static API.orca.*;
+import static API.orca.*;
+import java.util.*;
+
 /**
 * Creates a Letter object, enabling the easy creation of arrays for building ciphers
 * Character[] may well work; I haven't checked
