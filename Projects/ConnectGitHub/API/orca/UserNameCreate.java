@@ -50,7 +50,6 @@ public class UserNameCreate {
 		this.UserName=UserName;
 		this.Email=Email;
 	}
-	
 	public boolean netIsAvailable() {
 		try
 		{
@@ -60,7 +59,6 @@ public class UserNameCreate {
 			conn.getInputStream().close();
 			return true;
 		} 
-		
 		catch(MalformedURLException e) {
 			System.out.print("Please make mure you are connected to the internet.");;
 			return false;
@@ -71,7 +69,7 @@ public class UserNameCreate {
 		   return false;
 		}
 	}
-	public String saveString(String UserName,String Email)
+	public void saveString(String UserName,String Email)
 	{
 		try{
 		try{
@@ -84,17 +82,17 @@ public class UserNameCreate {
 			writer.println(UserName);
 			writer.println(Email);
 			writer.close();
-			return usernameComputer3+"/UserInformation.txt";
+			
 			}
 		catch (UnsupportedEncodingException e){
 			System.out.print("cannot find path.");
-			return "false";
+			
 		}
 		}
 		catch (FileNotFoundException e)
 		{
 			System.err.print("Cannot find path.");
-			return "false";
+			
 		}
 	}
 	
