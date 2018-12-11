@@ -10,20 +10,19 @@ import java.io.StreamTokenizer;
 public class userName_Email_Check
 {
 	public userName_Email_Check(){}
-	public void check(String path)
+	public void check()
 	{
 	 	try{
-		final Scanner scanner = new Scanner(new BufferedReader(new FileReader(path)));
-		String text1 = scanner.useDelimiter("\\D").next();
-			String[] userName_password = text1.split("\\s");
-			String one =userName_password[0];
-			String userName1=userName_password[1];
-			String Email1 =userName_password[2];
-			
-			System.out.println(one);
+		final Scanner scanner = new Scanner(new BufferedReader(new FileReader(new File("UserInformation.txt"))));
+		String text1 = scanner.useDelimiter("\\s*$").next();
+			String[] userName_password = text1.split("\n");
+			String userName1 =userName_password[0];
+			String Email=userName_password[1];
 			System.out.println(userName1);
-			System.out.println(Email1);
-			
+			System.out.println(Email);
+			final Scanner scanner1 = new Scanner(new BufferedReader(new FileReader(new File("List_of_Emails_UserNames.txt"))));
+			String text2 = scanner.useDelimiter("\\s*$").next();
+			String[] userName_Email_Collection = text2.split("\n");
 		}
 		catch(FileNotFoundException e)
 		{
