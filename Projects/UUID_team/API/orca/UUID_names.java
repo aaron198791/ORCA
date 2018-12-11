@@ -23,8 +23,7 @@ public class UUID_names {
 		return uuid;
 String usernameComputer3=System.getProperty("user.dir");
 PrintWriter writer = new PrintWriter(usernameComputer3+"/Do_Not_open.txt", "UTF-8");
-			writer.println(UserName);
-			writer.println(Email);
+			writer.println(uuid.toString());
 			writer.close();		
 	}
 	
