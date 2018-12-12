@@ -1,14 +1,9 @@
 package API.orca;
 
 import java.util.*;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Objects;
 import java.io.*;
 public class UUID_names {
 	
@@ -21,19 +16,18 @@ public class UUID_names {
 	}
 	
 	public UUID create_ID() {
-		UUID uuid =UUID.randomUUID();
+		UUID uuid = UUID.randomUUID();
 		return uuid;
-try(
-		String usernameComputer3=System.getProperty("user.dir");
-PrintWriter writer = new PrintWriter(usernameComputer3+"/Do_Not_open.txt", "UTF-8");
+		try{//Unreachable statement
+			String usernameComputer3 = System.getProperty("user.dir");
+			PrintWriter writer = new PrintWriter(usernameComputer3 + "/Do_Not_open.txt", "UTF-8");
 			writer.println(uuid.toString());
 			writer.close();		
-	}
-	catch (FileNotFoundException e)
-	{
-		System.out.println("couldn't find path");
-	}
-	
+		}
+		catch (FileNotFoundException | UnsupportedEncodingException e){//Note the second
+			System.out.println("couldn't find path");
+		}
+	}//Supposedly missing return statement; interesting because there IS one earlier, and it's causing its own problems
 	public static void main(String[] args) {
 		System.out.println("Successfully compiled UUID_names API");
 	}
