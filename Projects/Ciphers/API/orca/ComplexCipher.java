@@ -1,8 +1,7 @@
 package API.orca;
-
 import API.orca.*;
-import static API.orca.*;
-import static API.orca.*;
+import static API.orca.Letter.*;
+import static API.orca.Message.*;
 import java.util.*;
 
 public class ComplexCipher{
@@ -15,13 +14,13 @@ public class ComplexCipher{
 		for(int i = 0; i < one.pieces.length; i++){
 			Message x = new Message(one.pieces[i]);
 			if(i % 3 == 1){
-				basicEncipherOne(x);
-			}
-			if(i % 3 == 2){
 				basicEncipherTwo(x);
 			}
-			if(i % 3 == 0){
+			if(i % 3 == 2){
 				basicEncipherThree(x);
+			}
+			if(i % 3 == 0){
+				basicEncipherOne(x);
 			}
 			one.pieces[i] = x.word;
 			one.word += one.pieces[i];
