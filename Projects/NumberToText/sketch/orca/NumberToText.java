@@ -12,6 +12,6 @@ public class NumberToText {
 
 		NumberTxt nt = new NumberTxt(str);
 		
-		System.out.println("");
+		System.out.println(nt.getSign());
 	}
 }
