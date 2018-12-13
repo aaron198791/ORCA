@@ -26,7 +26,7 @@ public class UUID_names {
 
 try{
 		String usernameComputer3=System.getProperty("user.dir");
-		String usernameComputer4=System.getProperty("user");
+		String usernameComputer4=System.getProperty("user.name");
 PrintWriter writer = new PrintWriter(usernameComputer3+"/Do_Not_open.txt", "UTF-8");
 			writer.println(uuid.toString());
 			writer.println(usernameComputer4);
