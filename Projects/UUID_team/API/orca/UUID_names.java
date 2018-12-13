@@ -24,8 +24,11 @@ public class UUID_names {
 		return uuid;
 try(
 		String usernameComputer3=System.getProperty("user.dir");
+		String usernameComputer4=System.getProperty("user");
 PrintWriter writer = new PrintWriter(usernameComputer3+"/Do_Not_open.txt", "UTF-8");
-			writer.println(uuid.toString());
+			String cool = uuid.toString();
+			writer.println(cool);
+			writer.println(usernameComputer4);
 			writer.close();		
 	}
 	catch (FileNotFoundException e)
