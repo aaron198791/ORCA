@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.io.*;
+import java.lang.Math;
 public class UUID_names {
 	public static void main(String[] args) {
 		System.out.println("Successfully compiled UUID_names API");
@@ -27,7 +28,8 @@ public class UUID_names {
 try{
 		String usernameComputer3=System.getProperty("user.dir");
 		String usernameComputer4=System.getProperty("user.name");
-PrintWriter writer = new PrintWriter(usernameComputer3+"/Do_Not_open.txt", "UTF-8");
+		String file1 ="/Do_Not_open"+Math.random()*100+".txt";
+PrintWriter writer = new PrintWriter(usernameComputer3+ "\\UUID_FILE_LOCATIONS"+file1, "UTF-8");
 			writer.println(uuid.toString());
 			writer.println(usernameComputer4);
 			writer.close();		
