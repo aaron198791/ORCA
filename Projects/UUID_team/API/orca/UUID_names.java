@@ -29,7 +29,7 @@ try{
 		String usernameComputer3=System.getProperty("user.dir");
 		String usernameComputer4=System.getProperty("user.name");
 		String file1 ="/Do_Not_open"+Math.random()*100+".txt";
-PrintWriter writer = new PrintWriter(usernameComputer3+ "\\UUID_FILE_LOCATIONS"+file1, "UTF-8");
+PrintWriter writer = new PrintWriter(usernameComputer3+ "\\UUID_FILE_LOCATIONS\\"+file1, "UTF-8");
 			writer.println(uuid.toString());
 			writer.println(usernameComputer4);
 			writer.close();		
