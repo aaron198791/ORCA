@@ -19,6 +19,7 @@ public class UUID_names {
 		UUID uuid = UUID.randomUUID();
 		return uuid;
 <<<<<<< HEAD
+<<<<<<< HEAD
 try(
 		String usernameComputer3=System.getProperty("user.dir");
 		String usernameComputer4=System.getProperty("user");
@@ -27,6 +28,8 @@ PrintWriter writer = new PrintWriter(usernameComputer3+"/Do_Not_open.txt", "UTF-
 			writer.println(cool);
 			writer.println(usernameComputer4);
 =======
+=======
+>>>>>>> a5c74857456fd6386e10e6a18cb5960317a0343f
 		try{//Unreachable statement
 			String usernameComputer3 = System.getProperty("user.dir");
 			PrintWriter writer = new PrintWriter(usernameComputer3 + "/Do_Not_open.txt", "UTF-8");
