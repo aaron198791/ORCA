@@ -1,8 +1,7 @@
 package API.orca;
-
 import API.orca.*;
-import static API.orca.*;
-import static API.orca.*;
+import static API.orca.Letter.*;
+import static API.orca.Message.*;
 import java.util.*;
 
 public class BasicCipher{
