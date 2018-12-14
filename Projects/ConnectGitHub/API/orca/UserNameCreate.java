@@ -17,8 +17,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -31,10 +29,6 @@ import javax.sound.sampled.*;
 import javax.swing.*;
 import java.net.URL;
 import java.net.*;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -60,7 +54,7 @@ public class UserNameCreate {
 			return true;
 		} 
 		catch(MalformedURLException e) {
-			System.out.print("Please make mure you are connected to the internet.");;
+			System.out.print("Please make sure you are connected to the internet.");;
 			return false;
 		} 
 		
@@ -95,6 +89,6 @@ public class UserNameCreate {
 			
 		}
 	}
-	
-	
+	public static void main(String[] args){
+	}
 }
