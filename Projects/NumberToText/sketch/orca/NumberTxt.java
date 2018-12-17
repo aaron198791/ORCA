@@ -5,18 +5,164 @@ import java.lang.*;
 import java.lang.reflect.Array;
 
 public class NumberTxt {
+	private String userIn;
+	private String sign;
+	private String number;
+	private String decimal;
 
-	private static String sign;
+	public NumberTxt(final String input) {
+		this.userIn = input;
+	}
 
-	public NumberTxt(final String inputNum) {
-		if(inputNum.charAt(0) == '-') {
-			this.sign = "NEGATIVE";
+	private String toTxt(final String input) {
+		tokenize(getSign(input));
+
+		System.out.println(sign);
+		System.out.println(number);
+		System.out.println(decimal);
+
+		return sign+numTxt()+decTxt();
+	}
+
+	private String getSign(final String input) {
+		if(input.charAt(0) == '-') {
+			sign = "NEGATIVE ";
+			return input.substring(1);
 		}
 
 		else {
-			this.sign = "POSITIVE";
+			sign = "";
+			return input;
 		}
 	}
+
+	private void tokenize(final String input) {
+		StringTokenizer st = new StringTokenizer(input.replaceAll("\\s", ""), "."); 
+
+		if(st.countTokens() == 1) {
+			number = pad(st.nextToken());
+			decimal = "";
+		}
+
+		else if(st.countTokens() == 2) {
+			number = pad(st.nextToken());
+			decimal = pad(st.nextToken());
+		}
+
+		else {
+			throw new IllegalArgumentException("TOO MANY TOKENS!");
+		}
+	}
+
+	private String pad(String input) {
+		String str = input;
+		
+		while(input.length() % 3 != 0) {
+			str = "0".concat(input);
+			input = str;
+		}
+
+		return str;
+	}
+
+	private String numTxt() {
+		String num = number;
+		char[] numToken;
+
+		for(int i = 0; i < num; i += 3) {
+			char[] numToken = num.substring(i, i + 3).toCharArray();
+			num = number.substring(i + 3);
+			int j = i + 3;
+
+			while(i < j) {
+				convert(char[i])
+			}
+		}
+	}
+
+	private String decTxt(final String input) {
+		//fill
+	}*/
+
+	private static String getPlaceName() {
+		int size = (number.length() - 1) / 3;
+		String placeName;
+		
+		switch (size) {
+			case 0: 
+				placeName = "";
+				break;
+
+			case 1:
+				placeName = "thousand ";
+				break;
+
+			case 2:
+				placeName = "million ";
+				break;
+
+			case 3:
+				placeName = "billion ";
+				break;
+
+			case 4:
+				placeName = "trillion ";
+				break;
+
+			default:
+				placeName = "OUT_OF_RANGE ";
+				break;
+		}
+
+		return placeName;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if(this == o) {
+			return true;
+		}
+		
+		if((o == null) ||  o.getClass() != getClass()) {
+			return false;
+		}
+		
+		final NumberTxt that = (NumberTxt) o;
+		
+		return toString.equals(that.toString());
+	}
+	
+	@Override
+	public int hashCode() {
+		return toString().hashCode();
+	}
+
+	@Override
+	public String toString() {
+		return toTxt(userIn);
+	}
+
+	public static void main(String[] args) {
+		NumberTxt nt = new NumberTxt(-1234567.89);
+
+		System.out.println(nt);
+	}
+}
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
 	/*private static String number;
 	private static String decimal;
 	
@@ -117,185 +263,13 @@ public class NumberTxt {
 		return tokens;
 	}
 
-	private static String getPlaceName() {
-		int size = (int) number.length() / 3;
-		String placeName;
-		
-		switch (size) {
-			case 0: 
-				placeName = "";
-				break;
-
-			case 1:
-				placeName = "thousand ";
-				break;
-
-			case 2:
-				placeName = "million ";
-				break;
-
-			case 3:
-				placeName = "billion ";
-				break;
-
-			case 4:
-				placeName = "trillion ";
-				break;
-
-			default:
-				placeName = "OUT_OF_RANGE ";
-				break;
-		}
-
-		return placeName;
-	}
+	
 
 	private static String processTokens(final String token) {
 		String str = "";
 
 		for(int i = 0; i < 3; i++) {
-			switch(Integer.valueOf(token.charAt(i))) {
-				case 0:
-					str.concat("");
-					break;
-
-				case 1:
-					if(i == 1 || i == 2) {
-						str.concat("one ");
-						break;
-					}
-
-					if(i == 1) {
-						switch(Integer.valueOf(token.charAt(2))) {
-							case 0:
-								return str.concat("ten ");
-
-							case 1:
-								return str.concat("eleven ");
-
-							case 2:
-								return str.concat("twelve ");
-
-							case 3:
-								return str.concat("thirteen ");
-
-							case 4:
-								return str.concat("fourteen ");
-
-							case 5:
-								return str.concat("fifteen ");
-
-							case 6:
-								return str.concat("sixteen ");
-
-							case 7:
-								return str.concat("seventeen ");
-
-							case 8:
-								return str.concat("eighteen ");
-
-							case 9:
-								return str.concat("nineteen ");
-
-							default:
-								return str.concat("");
-						}
-					}
-
-					break;
-
-				case 2:
-					if(i == 1) {
-						str.concat("twenty-");
-					}
-
-					else {
-						str.concat("two ");
-					}
-
-					break;
-
-				case 3:
-					if(i == 1) {
-						str.concat("thirty-");
-					}
-
-					else {
-						str.concat("three ");
-					}
-
-					break;
-
-				case 4:
-					if(i == 1) {
-						str.concat("forty-");
-					}
-
-					else {
-						str.concat("four ");
-					}
-
-					break;
-
-				case 5:
-					if(i == 1) {
-						str.concat("fifty-");
-					}
-
-					else {
-						str.concat("five ");
-					}
-
-					break;
-
-				case 6:
-					if(i == 1) {
-						str.concat("sixty-");
-					}
-
-					else {
-						str.concat("six ");
-					}
-
-					break;
-
-				case 7:
-					if(i == 1) {
-						str.concat("seventy-");
-					}
-
-					else {
-						str.concat("seven ");
-					}
-
-					break;
-
-				case 8:
-					if(i == 1) {
-						str.concat("eighty-");
-					}
-
-					else {
-						str.concat("eight ");
-					}
-
-					break;
-
-				case 9:
-					if(i == 1) {
-						str.concat("ninety-");
-					}
-
-					else {
-						str.concat("nine ");
-					}
-
-					break;
-
-				default:
-					str.concat("");
-					break;
-			}
+			
 
 			if(i == 0 && Integer.valueOf(token.charAt(0)) != 0) {
 				str.concat("hundred ");
@@ -321,12 +295,3 @@ public class NumberTxt {
 	public String toString() {
 		return sign+" "+makeTxt();
 	}*/
-
-	public static String getSign() {
-		return sign;
-	}
-
-	public static void main(String[] args){
-		System.out.println("Successfully compiled NumberEnum");
-	}
-}
