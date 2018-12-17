@@ -1,0 +1,5 @@
+javac UUID_team\API\orca\UUID_names.java
+java API.orca.UUID_names.java
+
+git pull
+pause
