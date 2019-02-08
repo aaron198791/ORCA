@@ -12,7 +12,7 @@ public class Text {
     y = (height / 2) + 20;
     
     dx = -4;
-    dy = -6;
+    dy = 0;
   }
   
   public void display() {

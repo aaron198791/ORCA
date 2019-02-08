@@ -1,6 +1,12 @@
 void showGame() {
   p1.display();
   p2.display();
-  puck.move();
-  puck.display();
+  
+  try {
+    puck.move();
+    puck.display();
+  }
+  
+  catch(Exception e) {
+  }
 }

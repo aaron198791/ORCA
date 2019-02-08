@@ -1,7 +1,8 @@
-//import processing.sound.*;
+import processing.sound.*;
 
 Text[] txt = new Text[10];
-//SoundFile gH;
+SoundFile gH;
+PFont defaultFont;
 Puck puck;
 Paddle p1, p2;
 boolean hasScored =false;
@@ -16,10 +17,11 @@ void setup() {
   background(255);
   size(1300, 950);
   rink();
- // gH = new SoundFile(this, "C:\\Users\\SP513\\MYSKETCHES\\Pong\\Anaheim Ducks 2019 Goal Horn.wav");
+  gH = new SoundFile(this, "C:\\Users\\SP513\\ORCA\\Projects\\Pong\\San Diego Padres 2018 Home Run Horn.wav");
   puck = new Puck();
   p1 = new Paddle(0);
   p2 = new Paddle(1);
+  defaultFont = createFont("C:\\Users\\SP513\\MYSKETCHES\\Pong\\CODE Bold.otf", 100);
   t = millis();
 }
 
@@ -33,54 +35,46 @@ void draw() {
     dispScore();
     showGame();
     
-    if(puck.x >= width / 3 && puck.x <= 2 * width / 3 &&  puck.y <= puck.border) {
-      goals1++;
-      hasScored1;
-      p1 = new Paddle(0);
-      p2 = new Paddle(1);
-      
-      if(goals1 < 5) {
-                
-        puck = null;
-        //gH.play();
-        puck = new Puck();
+    try {
+      if(puck.x >= width / 4 && puck.x <= 3 * width / 4 &&  puck.y <= puck.border) {
+        goals1++;
+        hasScored1 = true;
+        p1 = new Paddle(0);
+        p2 = new Paddle(1);
+        t = millis();
+        
+        if(goals1 < 5) {
+          puck = null;
+          gH.play();
+        }
+        
+        else {
+          win();
+        }
       }
       
-      else {
-        hasScored = true;
-        puck.dx = 0;
-        puck.dy = 0;
-        win();
+      if(puck.x >= width / 4 && puck.x <= 3 * width / 4 &&  puck.y >= height - puck.border) {
+        goals2++;
+        hasScored2 = true;
+        p1 = new Paddle(0);
+        p2 = new Paddle(1);
+        t = millis();
+        
+        if(goals2 < 5) {
+          puck = null;
+        }
+        
+        else {
+          win();
+        }
       }
     }
     
-    else if(puck.x >= width / 3 && puck.x <= 2 * width / 3 &&  puck.y >= height - puck.border) {
-      goals2++;
-      
-      if(goals2 < 5) {
-        hasScored = true;
-        puck.dx = 0;
-        puck.dy = 0;
-       // gH.play();
-        //score();
-        p1 = new Paddle(0);
-        p2 = new Paddle(1);
-        puck = new Puck();
-        t = millis();
-      }
-      
-      else {
-        hasScored = true;
-        puck.dx = 0;
-        puck.dy = 0;
-        win();
-        puck = new Puck();
-        t = millis() + 23000;
-      }
+    catch(Exception e) {
     }
   }
   
-  if(hasScored1 /* && gH.isPlaying() == 1*/) {
+  if(hasScored1 && millis() < t + 16000) {
     rink();
     
     if((i == 0 || txt[i - 1].x <= (width - 400)) && i < 4) {
@@ -99,4 +93,20 @@ void draw() {
       txt[j].display();
     }
   }
+  
+  if(hasScored1 && millis() >= t + 16000) {
+    gH.stop();
+    hasScored1 = false;
+    puck = new Puck();
+  }
+  
+  if(hasScored2 && millis() < t + 4000) {
+    Text goalP2 = new Text("Goal P2");
+    goalP2.display();
+  }
+  
+  if(hasScored2 && millis() >= t + 4000) {
+    hasScored2 = false;
+    puck = new Puck();
+  }    
 }

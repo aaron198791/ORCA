@@ -24,7 +24,7 @@ public class Puck {
     }
     
     if(dirIndexY % 2 == 0) {
-      dy = 8;
+      dy = -8;
     }
     
     else {
