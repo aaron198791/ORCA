@@ -1,9 +1,10 @@
-import processing.sound.*;
+//import processing.sound.*;
 
 Text[] txt = new Text[10];
-SoundFile gH;
+//SoundFile gH;
 Puck puck;
 Paddle p1, p2;
+boolean hasScored =false;
 boolean hasScored1 = false;
 boolean hasScored2 = false;
 boolean start = false;
@@ -15,7 +16,7 @@ void setup() {
   background(255);
   size(1300, 950);
   rink();
-  gH = new SoundFile(this, "C:\\Users\\SP513\\MYSKETCHES\\Pong\\Anaheim Ducks 2019 Goal Horn.wav");
+ // gH = new SoundFile(this, "C:\\Users\\SP513\\MYSKETCHES\\Pong\\Anaheim Ducks 2019 Goal Horn.wav");
   puck = new Puck();
   p1 = new Paddle(0);
   p2 = new Paddle(1);
@@ -41,7 +42,7 @@ void draw() {
       if(goals1 < 5) {
                 
         puck = null;
-        gH.play();
+        //gH.play();
         puck = new Puck();
       }
       
@@ -60,7 +61,7 @@ void draw() {
         hasScored = true;
         puck.dx = 0;
         puck.dy = 0;
-        gH.play();
+       // gH.play();
         //score();
         p1 = new Paddle(0);
         p2 = new Paddle(1);
@@ -79,7 +80,7 @@ void draw() {
     }
   }
   
-  if(hasScored1 && gH.isPlaying() == 1) {
+  if(hasScored1 /* && gH.isPlaying() == 1*/) {
     rink();
     
     if((i == 0 || txt[i - 1].x <= (width - 400)) && i < 4) {
