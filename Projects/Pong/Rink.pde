@@ -8,11 +8,11 @@ void rink() {
     
   strokeWeight(30);
   stroke(155);
-  line(0, 0, width / 4, 0);
-  line(3 * width / 4, 0, width, 0);
+  line(0, 0, width / 3, 0);
+  line(2 * width / 3, 0, width, 0);
   line(width, 0, width, height);
-  line(width, height, 3 * width / 4, height);
-  line(width / 4, height, 0, height);
+  line(width, height, 2 * width / 3, height);
+  line(width / 3, height, 0, height);
   line(0, height, 0, 0);
   
   strokeWeight(5);

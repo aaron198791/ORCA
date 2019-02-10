@@ -5,7 +5,7 @@ public class Puck {
   
   public Puck() {
     y = height / 2;
-    dx = 5;
+    dx = 0;
     size = 30;
     border = size / 2;
     hasScored = false;
@@ -13,21 +13,23 @@ public class Puck {
     dirIndexX = (int) random(10);
     dirIndexY = (int) random(10);
     
-    if(dirIndexX % 2 == 0) {
+    /*if(dirIndexX % 2 == 0) {
       x = 2 * width / 3;
-      dx = -3;
+      dx = 0;
     }
     
     else {
       x = width / 3;
-      dx = 3;
-    }
+      dx = 0;
+    }*/
     
     if(dirIndexY % 2 == 0) {
+      x = p1.posX;
       dy = -8;
     }
     
     else {
+      x = p2.posX;
       dy = 8;
     }
   }

@@ -18,9 +18,9 @@ void setup() {
   size(1300, 950);
   rink();
   gH = new SoundFile(this, "C:\\Users\\SP513\\ORCA\\Projects\\Pong\\San Diego Padres 2018 Home Run Horn.wav");
-  puck = new Puck();
   p1 = new Paddle(0);
   p2 = new Paddle(1);
+  puck = new Puck();
   defaultFont = createFont("C:\\Users\\SP513\\MYSKETCHES\\Pong\\CODE Bold.otf", 100);
   t = millis();
 }
@@ -36,7 +36,7 @@ void draw() {
     showGame();
     
     try {
-      if(puck.x >= width / 4 && puck.x <= 3 * width / 4 &&  puck.y <= puck.border) {
+      if(puck.x >= width / 3 && puck.x <= 2 * width / 3 &&  puck.y <= puck.border) {
         goals1++;
         hasScored1 = true;
         p1 = new Paddle(0);
@@ -53,7 +53,7 @@ void draw() {
         }
       }
       
-      if(puck.x >= width / 4 && puck.x <= 3 * width / 4 &&  puck.y >= height - puck.border) {
+      if(puck.x >= width / 3 && puck.x <= 2 * width / 3 &&  puck.y >= height - puck.border) {
         goals2++;
         hasScored2 = true;
         p1 = new Paddle(0);
