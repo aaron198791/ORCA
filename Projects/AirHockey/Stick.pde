@@ -1,10 +1,12 @@
 public class Stick {
   int x, y;
   int dx, dy;
+  int score;
   boolean home;
   
   public Stick(boolean home) {
     this.home = home;
+    this.score = 0;
     
     if(home) {
       this.x = 200;
@@ -22,5 +24,14 @@ public class Stick {
     else fill(0,128,128);
     ellipseMode(CENTER);
     circle(this.x, this.y, 75);
+    if(this.home) {
+      textMode(CENTER);
+      textSize(50);
+      text(this.score, 100, 100);
+    } else {
+      textMode(CENTER);
+      textSize(50);
+      text(this.score, width - 100, 100);
+    }
   }
 }

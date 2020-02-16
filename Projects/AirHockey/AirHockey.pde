@@ -3,6 +3,8 @@ Puck puck;
 Stick p1, p2;
 import processing.sound.*;
 SoundFile horn;
+int period;
+int time;
 
 void setup() {
   img = loadImage("DucksLogo.png");
@@ -12,9 +14,12 @@ void setup() {
   p1 = new Stick(true);
   p2 = new Stick(false);
   horn = new SoundFile(this, "C:\\Users\\SP513\\MYSKETCHES\\AirHockey\\GoalHorn1.mp3");
+  period = 1;
+  time = 180;
 }
 
 void draw() {
+  time = 180 - (millis() / 1000);
   rink(img);
   
   puck.move();
@@ -23,6 +28,7 @@ void draw() {
   p2.display();
   
   if(puck.x >= width - 10 && puck.y > (height / 2) - 50 && puck.y < (height / 2) + 50) {
+    rink(img);
     goalSequence(horn);
   }
 }

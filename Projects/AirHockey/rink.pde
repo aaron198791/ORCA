@@ -15,6 +15,13 @@ public void rink(PImage img) {
   line(width, height, 0, height);
   line(0, height, 0, (height / 2) + 70);
   line(0, (height / 2) - 70, 0, 0);
-  image(img, (width / 2) - 200, (height / 2) - 100, 400, 200);
+  image(img, (width / 2) - 175, (height / 2) - 100, 350, 200);
   stroke(0);
+  fill(0);
+  textMode(CENTER);
+  textSize(50);
+  if(period == 1) text("P1", (width / 2) - 150, 100);
+  else if(period == 2) text("P2", (width / 2) - 100, 100);
+  else if(period == 3) text("P3", (width / 2) - 100, 100);
+  text(time, (width / 2) + 100, 100);
 }
