@@ -1,12 +1,17 @@
 public class Puck {
-  int x, y;
-  int dx, dy;
+  float x, y;
+  float dx, dy;
   
   public Puck(int delta) {
     this.x = width / 2;
     this.y = height / 2;
-    this.dy = delta * 2;
-    this.dx = -delta * 3;
+    this.dy = 0;
+    
+    if(random(10) % 2 == 0) {
+      this.dx = delta * 3;
+    } else {
+      this.dx = -delta * 3;
+    }
   }
   
   public void move() {
@@ -18,12 +23,14 @@ public class Puck {
       dy *= -1;
     }
     
-    if(this.x <= 10 && this.y > (height / 2) - 50 && this.y < (height / 2) + 50) {
-      dx = dy = 0;
+    if(20 >= abs(this.x - p1.x) && this.y < p1.y + 37.5 && this.y > p1.y - 37.5) {
+      dx *= -1;
+      dy = -10 * sin(3 * (this.y - p1.y));
     }
     
-    if(this.x >= width - 10 && this.y > (height / 2) - 50 && this.y < (height / 2) + 50) {
-      dx = dy = 0;
+    if(20 >= abs(this.x - p2.x) && this.y < p2.y + 37.5 && this.y > p2.y - 37.5) {
+      dx *= -1;
+      dy = -10 * sin(3 * (this.y - p2.y));
     }
     
     this.x += dx;
@@ -39,3 +46,11 @@ public class Puck {
     circle(this.x, this.y, 20);
   }
 }
+
+/*if(this.x <= 10 && this.y > (height / 2) - 50 && this.y < (height / 2) + 50) {
+      dx = dy = 0;
+    }
+    
+    if(this.x >= width - 10 && this.y > (height / 2) - 50 && this.y < (height / 2) + 50) {
+      dx = dy = 0;
+    }*/

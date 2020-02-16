@@ -1,16 +1,6 @@
-public void goalSequence(SoundFile horn) {
-  horn.play();
-  int t = millis();
-  
-  while(millis() < t + 15000) {
-  
+public void goalSequence(SoundFile horn) {    
+  if(horn.isPlaying() == 0) {
+    horn.stop();
+    horn.play();
   }
-  
-  puck = new Puck(0);
-  
-  while(millis() < t + 3000) {}
-  
-  rink(img);
-  
-  puck = new Puck(0);
 }

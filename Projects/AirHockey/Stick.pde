@@ -22,8 +22,8 @@ public class Stick {
     strokeWeight(1);
     if(this.home) fill(255, 140, 0);
     else fill(0,128,128);
-    ellipseMode(CENTER);
-    circle(this.x, this.y, 75);
+    rectMode(CENTER);
+    rect(this.x, this.y, 60, 75);
     if(this.home) {
       textMode(CENTER);
       textSize(50);
