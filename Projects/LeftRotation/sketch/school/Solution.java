@@ -6,25 +6,9 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class LeftRotation {
+public class Solution {
 
-    public static void rotate(int[] a, int d) {
-        int[] b = new int[a.length];
 
-        for(int i = 0; i < a.length; i++) {
-            if(i - d < 0) {
-                b[a.length + i - d] = a[i];
-            }
-
-            else {
-                b[i - d] = a[i];
-            }
-        }
-
-        for(int j = 0; j < a.length; j++) {
-            System.out.print(b[j] + " ");
-        } 
-    }
 
     private static final Scanner scanner = new Scanner(System.in);
 
@@ -38,14 +22,24 @@ public class LeftRotation {
         int[] a = new int[n];
 
         String[] aItems = scanner.nextLine().split(" ");
-        //scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
         for (int i = 0; i < n; i++) {
             int aItem = Integer.parseInt(aItems[i]);
-            a[i] = aItem;
+			if(i - d < 0){
+				a[(n + i) - d] = aItem;
+			}
+			else{
+				a[i - d] = aItem;
+			}
         }
 
-        rotate(a, d);
+		for(int i = 0; i < n; i++){
+			System.out.print(a[i]);
+			if(i < n - 1){
+				System.out.print(" ");
+			}
+		}
 
         scanner.close();
     }
